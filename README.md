@@ -45,11 +45,11 @@ your-vault/
 
 Give this prompt to Claude Code:
 
-> Download https://github.com/[YOUR-USERNAME]/business-second-brain to a temporary folder — NOT inside my vault. Read the CLAUDE.md and docs/how-to-use.md from the downloaded template. Then look at my vault and help me add whatever I'm missing. Don't overwrite anything I already have. Show me every change before you make it.
+> Download https://github.com/seanmccloskey10-cell/claude-second-brain to a temporary folder — NOT inside my vault. Read the CLAUDE.md and docs/how-to-use.md from the downloaded template. Then look at my vault and help me add whatever I'm missing. Don't overwrite anything I already have. Show me every change before you make it.
 
 If you're comfortable with git, you can also clone it:
 ```
-git clone https://github.com/[TEMPLATE-URL] my-brain-template
+git clone https://github.com/seanmccloskey10-cell/claude-second-brain my-brain-template
 ```
 
 ### Starting from scratch

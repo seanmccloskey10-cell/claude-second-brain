@@ -19,7 +19,7 @@ This guide takes about 15 minutes. By the end, you'll have a working second brai
 
 **Option B (advanced — only if you already use git):**
 ```
-git clone https://github.com/[TEMPLATE-URL] my-brain
+git clone https://github.com/seanmccloskey10-cell/claude-second-brain my-brain
 ```
 
 ## Step 2 — Open it in VS Code
