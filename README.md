@@ -12,14 +12,14 @@ Your vault is a folder of plain text files on your computer. Claude reads them a
 
 **You just talk to Claude.** Tell it what you're thinking, share an article, ask a question. Claude knows where things go and how to organize them — the instruction file it reads automatically tells it what to do.
 
-The one command worth knowing: **`/brief`** — run it once a week and Claude reads your entire vault, tells you what's changed, surfaces connections between ideas, and gives you one thing to focus on. That's where the magic happens.
+The one command worth knowing: **`/brief`** — a weekly briefing where Claude reads your entire vault, tells you what's changed, surfaces connections, and gives you one thing to focus on. **You don't have to remember to run it.** Claude tracks when your last briefing was and offers to run one when it's time.
 
 ## Three Habits
 
 | Habit | What you do | How long |
 |-------|------------|----------|
 | **Capture** | Tell Claude a thought, share an article, talk about your business | 30 seconds – 10 minutes |
-| **Review** | Run `/brief` once a week | 5 minutes to read |
+| **Review** | Claude offers `/brief` weekly — just say yes | 5 minutes to read |
 | **Feed** | Save interesting articles to `raw/`, tell Claude to process them | 2 minutes |
 
 Everything else is handled by Claude behind the scenes.

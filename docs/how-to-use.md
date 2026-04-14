@@ -17,13 +17,13 @@ Throughout your day, when something strikes you — an idea, a frustration, a qu
 Claude figures out where it goes, shows you what it would write, and saves it once you approve. Takes 30 seconds. Voice-transcribe if you can — it's faster and you'll say more.
 
 ### 3. Check in weekly
-Once a week (Friday works well), type:
+Once a week, Claude reads your entire vault and gives you a briefing: what's changed, what you've been thinking about, connections between ideas, and one thing to focus on this week.
+
+**You don't have to remember to do this.** Claude keeps track. If it's been a week since your last briefing, Claude will offer to run one at the start of your next session. You can also trigger it yourself anytime:
 
 ```
 /brief
 ```
-
-Claude reads your entire vault and gives you a briefing: what's changed, what you've been thinking about, connections between ideas, and one thing to focus on this week.
 
 This is where the magic happens. The more you've added during the week, the richer the briefing. After a few weeks, you'll start seeing patterns you didn't notice yourself.
 
@@ -40,6 +40,9 @@ Your vault gets smarter when you feed it. Here's how to turn your social media s
    - Paste the content
 3. **Tell Claude to process it.** Something like: "I saved an article to raw/. Can you turn it into knowledge for my wiki?" Claude reads it, pulls out what's relevant to YOUR business, and creates or updates wiki pages.
 4. **The raw file stays untouched.** It's your receipt.
+
+### What Claude does behind the scenes
+When you share a thought, process an article, or have a conversation, Claude automatically checks whether anything discussed deserves a wiki page. If it does, Claude proposes one — you approve, and the knowledge is filed. You don't have to think about wiki pages at all. They build up as a side effect of talking to Claude.
 
 ### Why this matters
 Most content consumption is passive — you read it, think "that was interesting," and forget it in a week. This pipeline turns reading into knowledge that compounds:

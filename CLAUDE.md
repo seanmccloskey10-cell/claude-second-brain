@@ -115,6 +115,14 @@ Log it for future reference.
 2. Include: the decision, the context, alternatives considered, and when to revisit
 3. Link it from the relevant pillar or wiki page
 
+### After every meaningful interaction — build the wiki automatically
+The owner should never have to ask "can you update the wiki?" It happens as a side effect of normal conversation.
+1. After capturing a thought, processing an article, or finishing a brain dump, ask: "Did anything come up that deserves its own wiki page?"
+2. If yes — check if a relevant page already exists in `wiki/`. Update it, or propose a new one.
+3. Show the owner what you'd add. Get approval before writing.
+4. A wiki page is worth creating when an idea is **reusable across sessions** — not every one-off thought. If in doubt, skip it.
+5. The goal: the wiki grows naturally. The owner talks, and knowledge accumulates.
+
 ## Staleness Check
 
 Look at the `Focus updated:` date in README.md. If it's more than 7 days old, ask the owner to update their current priorities before doing anything else. Stale context means wrong advice.
@@ -123,7 +131,11 @@ Look at the `Focus updated:` date in README.md. If it's more than 7 days old, as
 
 This vault has one command: `/brief`. It generates a weekly synthesis of the entire vault.
 
-The owner should run it once a week. The briefing file gets saved to `wiki/briefings/YYYY-MM-DD.md`. See `.claude/commands/brief.md` for the full briefing protocol.
+**Don't wait for the owner to remember.** At the start of a session, check `wiki/briefings/` for the most recent briefing file. If it's been 7+ days since the last one (or no briefings exist yet), proactively offer to run it:
+
+> "It's been [X days] since your last vault briefing. Want me to run one? Takes about a minute — I'll read everything and show you connections, blind spots, and what to focus on this week."
+
+If they say no, don't ask again until the next session. If they say yes, run the protocol in `.claude/commands/brief.md`. The briefing gets saved to `wiki/briefings/YYYY-MM-DD.md`.
 
 This is the single most important habit. The briefing is where connections surface, blind spots get named, and the vault starts giving back more than the owner put in.
 

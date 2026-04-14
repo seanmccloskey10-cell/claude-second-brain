@@ -96,4 +96,4 @@ Good to ask every month or so. Keeps the vault clean and current.
 
 The vault isn't a filing cabinet — it's an advisor that gets smarter the more you use it. Every thought, article, and decision adds context. Over time, Claude's answers stop being generic and start being specific to you, your business, and your situation.
 
-The habit is simple: **capture daily, review weekly, and ask questions whenever you need them.** The vault does the rest.
+The habit is simple: **capture daily, say yes when Claude offers a weekly briefing, and ask questions whenever you need them.** The vault does the rest.

@@ -80,9 +80,9 @@ If you've only just started, the briefing will be short — that's normal. It ge
 
 1. **One thought per day** — just tell Claude what's on your mind (30 seconds, voice-transcribe)
 2. **Find one article** relevant to your business. Save it in `raw/`. Tell Claude to process it.
-3. **Run `/brief` on Friday.** See what Claude learned.
+3. **Wait for Claude to offer a briefing.** After a week, Claude will ask if you want one. Say yes. See what it learned.
 
-That's the whole habit. A few minutes per day.
+You can also run `/brief` yourself anytime. That's the whole habit. A few minutes per day.
 
 ---
 
