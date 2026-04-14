@@ -10,13 +10,17 @@ No repeating yourself. No re-explaining your business. No starting from scratch.
 
 Your vault is a folder of plain text files on your computer. Claude reads them at the start of every session. The more you add, the smarter it gets.
 
-**Three commands, that's all you need:**
+**You just talk to Claude.** Tell it what you're thinking, share an article, ask a question. Claude knows where things go and how to organize them — the instruction file it reads automatically tells it what to do.
 
-| Command | What it does | How long |
-|---------|-------------|----------|
-| `/add-note` | Capture a thought | 30 seconds |
-| `/brief` | Get a weekly summary of what's changed and what to focus on | 5 minutes |
-| `/interview` | Deep brain dump — Claude asks, you talk | 10 minutes |
+The one command worth knowing: **`/brief`** — run it once a week and Claude reads your entire vault, tells you what's changed, surfaces connections between ideas, and gives you one thing to focus on. That's where the magic happens.
+
+## Three Habits
+
+| Habit | What you do | How long |
+|-------|------------|----------|
+| **Capture** | Tell Claude a thought, share an article, talk about your business | 30 seconds – 10 minutes |
+| **Review** | Run `/brief` once a week | 5 minutes to read |
+| **Feed** | Save interesting articles to `raw/`, tell Claude to process them | 2 minutes |
 
 Everything else is handled by Claude behind the scenes.
 
@@ -26,12 +30,11 @@ Everything else is handled by Claude behind the scenes.
 your-vault/
 ├── pillars/          ← Your business (the core)
 ├── raw/              ← Articles, PDFs, posts you've saved (originals, never edited)
-├── wiki/             ← Your personal Wikipedia (Claude builds this from your raw sources)
+├── wiki/             ← Your personal Wikipedia (Claude builds this from your sources)
 ├── inbox/            ← Quick thoughts, not yet sorted
 ├── decisions/        ← Business decisions with context
-├── .claude/commands/ ← Your commands (hidden folder — Claude finds it automatically)
-├── CLAUDE.md         ← The instruction file Claude reads first (all-caps is how it finds it)
 ├── mistakes-made.md  ← Error log — Claude reads this so it doesn't repeat mistakes
+├── CLAUDE.md         ← The instruction file Claude reads first (all-caps is how it finds it)
 └── docs/             ← Setup guides
 ```
 

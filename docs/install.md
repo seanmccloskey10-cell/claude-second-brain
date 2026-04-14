@@ -45,14 +45,13 @@ claude
 
 Claude reads the `CLAUDE.md` file automatically. It now knows how to work with your vault.
 
-## Step 4 — Run your first interview
+## Step 4 — Tell Claude about your business
 
-Type:
-```
-/interview
-```
+Just start talking:
 
-Claude will ask about you and your business. Talk to it — voice-transcribe if you can. It'll capture everything into your vault. This is the most important step: getting your business context into the vault.
+"I want to tell you about my business. Can you interview me and capture everything in my vault?"
+
+Claude will ask about you and your business. Talk to it — voice-transcribe if you can. It'll capture everything into your vault, showing you what it's going to write before making any changes. This is the most important step: getting your business context into the vault.
 
 ## Step 5 — Open in Obsidian
 
@@ -75,15 +74,15 @@ Back in VS Code, in your vault folder:
 /brief
 ```
 
-If you've only done one interview, the briefing will be short — that's normal. It gets richer every week as you add more.
+If you've only just started, the briefing will be short — that's normal. It gets richer every week as you add more.
 
 ## What to Do This Week
 
-1. **One thought per day** using `/add-note` (30 seconds, voice-transcribe)
-2. **Find one article** relevant to your business. Save it in `raw/`. Run `/ingest`.
+1. **One thought per day** — just tell Claude what's on your mind (30 seconds, voice-transcribe)
+2. **Find one article** relevant to your business. Save it in `raw/`. Tell Claude to process it.
 3. **Run `/brief` on Friday.** See what Claude learned.
 
-That's the whole habit. Three commands, a few minutes per day.
+That's the whole habit. A few minutes per day.
 
 ---
 
@@ -94,12 +93,6 @@ Claude Code isn't installed yet. Follow the [install guide](https://docs.anthrop
 
 **"I see files in VS Code but not in Obsidian"**
 Make sure you opened the same folder in both apps. In Obsidian: Open Vault → select the vault folder.
-
-**"/interview doesn't work"**
-Check that the commands folder is inside your vault. It's in a hidden folder called `.claude`. To see hidden files:
-- **Windows:** In File Explorer, click **View → Show → Hidden Items**
-- **Mac:** In Finder, press **Cmd + Shift + .**
-You should see a `.claude` folder with a `commands` subfolder containing the four command files.
 
 **"Claude isn't reading my vault context"**
 Make sure you're in the vault folder when you start Claude Code. Check that `CLAUDE.md` exists in the root of your vault folder.

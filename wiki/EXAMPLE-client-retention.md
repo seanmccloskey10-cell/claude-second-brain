@@ -20,7 +20,7 @@ Strategies and observations about keeping existing clients engaged and coming ba
 
 ## How This Applies to My Business
 
-(This section gets filled in when you run /interview or /add-note and talk about your own experience with retention.)
+(This section gets filled in when you talk to Claude about your own experience with retention.)
 
 ## Owner's Take
 

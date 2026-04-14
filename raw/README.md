@@ -9,7 +9,7 @@ This folder is for original material — things you didn't write.
 - Podcast transcripts
 - Screenshots or notes from courses
 
-**The rule:** Never edit anything in this folder. These are your originals. The useful parts get pulled out into `wiki/` by running the `/ingest` command.
+**The rule:** Never edit anything in this folder. These are your originals. The useful parts get pulled out into `wiki/` when you tell Claude to process them.
 
 **How to name files:**
 - `YYYY-MM-DD-short-description.md` — e.g., `2026-04-14-client-retention-article.md`
@@ -17,7 +17,7 @@ This folder is for original material — things you didn't write.
 
 **The workflow:**
 1. Find something interesting → save it here
-2. Run `/ingest` → Claude reads it and creates wiki pages
+2. Tell Claude: "I saved an article to raw/. Can you process it?" → Claude reads it and creates wiki pages
 3. The raw file stays untouched as your permanent receipt
 
 Six months from now, if you ever think "where did I read that?" — it's here.

@@ -62,7 +62,7 @@ generated_by: /brief
 If the vault has fewer than 5 wiki pages, write a short briefing that:
 1. Summarizes what's there
 2. Suggests what to capture next (based on gaps you see)
-3. Encourages them: "Run /interview or /add-note a few times this week, and next week's briefing will have much more to work with."
+3. Encourages them: "Tell me a few thoughts about your business this week, and next week's briefing will have much more to work with."
 
 ## After writing
 
