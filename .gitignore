@@ -1,0 +1,29 @@
+# Secrets — never commit these
+.env
+.env.local
+.env.*.local
+
+# Obsidian workspace state (changes every time you open the app)
+.obsidian/workspace*
+.obsidian/cache
+.obsidian/plugins/*/data.json
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor state
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python (if you add scripts later)
+__pycache__/
+.venv/
+*.pyc
+
+# Logs
+*.log
