@@ -44,6 +44,18 @@ generated_by: /brief
 ## Unprocessed Items
 (Files sitting in raw/ or inbox/ that haven't been turned into wiki pages yet.)
 
+## Vault Health
+(Quick structural audit. Check for:)
+- Orphan pages (no inbound links from other notes)
+- Non-.md files or unexpected folders at vault root
+- Unprocessed raw files (missing `processed: true` in frontmatter)
+- Stale projects (status: active but no updates in 14+ days)
+- File count sanity (a small vault shouldn't have thousands of files)
+- Contradictions between pages
+- Claims without source attribution (a wiki page making claims with no `## Sources` section)
+- Missing cross-references (wiki pages that mention a concept but don't link to the relevant page)
+(If everything is clean, say so in one line. Only detail problems.)
+
 ## One Thing to Do This Week
 (A single, concrete suggestion. Not a to-do list. One thing.)
 ```
@@ -65,6 +77,8 @@ If the vault has fewer than 5 wiki pages, write a short briefing that:
 3. Encourages them: "Tell me a few thoughts about your business this week, and next week's briefing will have much more to work with."
 
 ## After writing
+
+Append to `log.md`: `## [YYYY-MM-DD] lint | Weekly briefing`
 
 Tell the owner:
 - Where you saved the briefing

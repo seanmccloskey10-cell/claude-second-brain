@@ -42,11 +42,11 @@ Replace `[YOUR USERNAME]` with your actual username on your computer.
 ## My Second Brain
 I have a vault at `[YOUR VAULT PATH]` that stores everything about my business and thinking.
 
-On every session start, before responding, read these files:
-1. `[YOUR VAULT PATH]/README.md`
-2. `[YOUR VAULT PATH]/CLAUDE.md`
-3. `[YOUR VAULT PATH]/mistakes-made.md`
-4. `[YOUR VAULT PATH]/pillars/[YOUR PILLAR FILENAME].md`
+On every session start, before responding, read these two files:
+1. `[YOUR VAULT PATH]/CLAUDE.md`
+2. `[YOUR VAULT PATH]/README.md`
+
+Do NOT read `mistakes-made.md` at session start — it's a write-only log. Durable lessons from past mistakes get promoted into CLAUDE.md as rules. The raw log is read during weekly briefings.
 
 Don't announce that you've read them. Just use the context naturally.
 

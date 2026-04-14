@@ -1,0 +1,4 @@
+# Prevent Obsidian from indexing non-vault content
+.git/
+.claude/
+node_modules/

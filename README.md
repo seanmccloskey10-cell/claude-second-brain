@@ -12,14 +12,14 @@ Your vault is a folder of plain text files on your computer. Claude reads them a
 
 **You just talk to Claude.** Tell it what you're thinking, share an article, ask a question. Claude knows where things go and how to organize them — the instruction file it reads automatically tells it what to do.
 
-The one command worth knowing: **`/brief`** — a weekly briefing where Claude reads your entire vault, tells you what's changed, surfaces connections, and gives you one thing to focus on. **You don't have to remember to run it.** Claude tracks when your last briefing was and offers to run one when it's time.
+The one command worth knowing: **`/brief`** — a weekly briefing where Claude reads your entire vault, tells you what's changed, surfaces connections, and gives you one thing to focus on. **You don't have to remember to run it.** Claude tracks when your last briefing was and generates one automatically when it's time.
 
 ## Three Habits
 
 | Habit | What you do | How long |
 |-------|------------|----------|
 | **Capture** | Tell Claude a thought, share an article, talk about your business | 30 seconds – 10 minutes |
-| **Review** | Claude offers `/brief` weekly — just say yes | 5 minutes to read |
+| **Review** | Claude runs `/brief` weekly — read the output | 5 minutes to read |
 | **Feed** | Save interesting articles to `raw/`, tell Claude to process them | 2 minutes |
 
 Everything else is handled by Claude behind the scenes.
@@ -31,10 +31,13 @@ your-vault/
 ├── pillars/          ← Your business (the core)
 ├── raw/              ← Articles, PDFs, posts you've saved (originals, never edited)
 ├── wiki/             ← Your personal Wikipedia (Claude builds this from your sources)
+│   ├── index.md      ← Table of contents (Claude maintains this automatically)
+│   └── briefings/    ← Weekly briefings saved here
 ├── inbox/            ← Quick thoughts, not yet sorted
 ├── decisions/        ← Business decisions with context
-├── mistakes-made.md  ← Error log — Claude reads this so it doesn't repeat mistakes
-├── CLAUDE.md         ← The instruction file Claude reads first (all-caps is how it finds it)
+├── log.md            ← Activity log — what was ingested, when briefings ran
+├── mistakes-made.md  ← Error log (write-only — durable lessons get promoted into CLAUDE.md)
+├── CLAUDE.md         ← The instruction file Claude reads first
 └── docs/             ← Setup guides
 ```
 
@@ -69,7 +72,7 @@ See [docs/global-instruction-file.md](docs/global-instruction-file.md) to set th
 
 ## Your Vault Right Now
 
-**Focus updated:** [DATE]
+**Focus updated:** YYYY-MM-DD
 
 **Current priorities:**
 - [ ] ...

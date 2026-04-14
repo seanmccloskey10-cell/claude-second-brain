@@ -8,14 +8,20 @@ A personal second brain for one person and their business. It stores context, de
 
 ## Session Start — What to Read First
 
-Every session, before responding, read these files in order:
+Every session, before responding, read these two files:
 
-1. `README.md` — current priorities and what's active
-2. This file (`CLAUDE.md`) — how to work with the vault
-3. `mistakes-made.md` — past errors, so you don't repeat them
-4. The pillar file in `pillars/` — the owner's business context
+1. This file (`CLAUDE.md`) — how to work with the vault
+2. `README.md` — current priorities and what's active
+
+Then:
+3. **Staleness gate:** Check the `Focus updated:` date in README. If it's more than 7 days old, ask the owner to update their priorities before doing anything else. Stale context means wrong advice.
+4. **Briefing gate:** Check `wiki/briefings/` for the most recent briefing file. If 7+ days since the last briefing (or none exist), **generate a briefing automatically** using `.claude/commands/brief.md` before doing anything else.
+5. **Structural glance:** While reading, note anything unexpected — folders that shouldn't exist, non-.md files at root, anything that looks wrong. Flag it if found.
+6. Only read deeper files if the question requires them — follow `[[wikilinks]]` to navigate, don't load everything
 
 Do not announce that you've read them. Just use the context naturally.
+
+**What NOT to read at session start:** `mistakes-made.md` is a write-only log, not a session-start read. Durable lessons from past mistakes are graduated into this CLAUDE.md file as rules. The raw log is read during briefings and on demand.
 
 ## Folder Map
 
@@ -90,13 +96,14 @@ Turn it into knowledge.
 2. Read the pillar file so you know what's relevant to THEIR business
 3. Extract key insights: the idea, why it matters for them, any action it suggests. Ignore everything that isn't relevant.
 4. Show what wiki pages you'd create or update, and what you'd add. Get approval.
-5. Write the pages. Link them to existing notes with `[[double brackets]]`. Add a source citation:
+5. Write new pages AND update existing pages affected by the new information. Link them to existing notes with `[[double brackets]]`. Add a source citation:
    ```
    ## Sources
    - [[raw/YYYY-MM-DD-article-name]] — processed YYYY-MM-DD
    ```
 6. Mark the raw file as processed by adding `processed: true` to its info block
 7. Don't copy articles word-for-word — synthesize. Don't create a page for every minor point — group related ideas.
+8. Append to `log.md`: `## [YYYY-MM-DD] ingest | source-name`
 
 ### When they want to talk things through (brain dump)
 A longer conversation to capture business knowledge.
@@ -114,6 +121,13 @@ Log it for future reference.
 1. Create a file in `decisions/` using the template there
 2. Include: the decision, the context, alternatives considered, and when to revisit
 3. Link it from the relevant pillar or wiki page
+4. Append to `log.md`: `## [YYYY-MM-DD] decision | short-description`
+
+### When they ask a question
+1. Read `wiki/index.md` to find relevant pages
+2. Read the relevant wiki pages
+3. Synthesize an answer with citations: `[Source: wiki/page-name]`
+4. If the answer is reusable, offer to file it as a new wiki page
 
 ### After every meaningful interaction — build the wiki automatically
 The owner should never have to ask "can you update the wiki?" It happens as a side effect of normal conversation.
@@ -121,28 +135,35 @@ The owner should never have to ask "can you update the wiki?" It happens as a si
 2. If yes — check if a relevant page already exists in `wiki/`. Update it, or propose a new one.
 3. Show the owner what you'd add. Get approval before writing.
 4. A wiki page is worth creating when an idea is **reusable across sessions** — not every one-off thought. If in doubt, skip it.
-5. The goal: the wiki grows naturally. The owner talks, and knowledge accumulates.
-
-## Staleness Check
-
-Look at the `Focus updated:` date in README.md. If it's more than 7 days old, ask the owner to update their current priorities before doing anything else. Stale context means wrong advice.
+5. Always update `wiki/index.md` when adding or updating wiki pages — it's the table of contents.
+6. The goal: the wiki grows naturally. The owner talks, and knowledge accumulates.
 
 ## The Weekly Briefing
 
-This vault has one command: `/brief`. It generates a weekly synthesis of the entire vault.
+The briefing gate in Session Start handles this automatically — if 7+ days since the last briefing, Claude generates one before doing anything else. No command to remember.
 
-**Don't wait for the owner to remember.** At the start of a session, check `wiki/briefings/` for the most recent briefing file. If it's been 7+ days since the last one (or no briefings exist yet), proactively offer to run it:
+The owner can also run `/brief` manually at any time. The briefing is where connections surface, blind spots get named, and the vault starts giving back more than the owner put in.
 
-> "It's been [X days] since your last vault briefing. Want me to run one? Takes about a minute — I'll read everything and show you connections, blind spots, and what to focus on this week."
+The briefing also covers vault health: orphan pages, unprocessed raw files, stale projects, and anything structurally wrong.
 
-If they say no, don't ask again until the next session. If they say yes, run the protocol in `.claude/commands/brief.md`. The briefing gets saved to `wiki/briefings/YYYY-MM-DD.md`.
+## Mistakes Log Protocol
 
-This is the single most important habit. The briefing is where connections surface, blind spots get named, and the vault starts giving back more than the owner put in.
+`mistakes-made.md` is a **write-only log**. It is NOT read at session start — that would waste context on every session. Instead:
+- Durable lessons are **graduated into this CLAUDE.md file as rules** (this is how this file grows over time)
+- The full log is read during briefings and when the owner asks
+- The log still exists as a permanent record
+
+When Claude makes a mistake:
+1. Append entry to `mistakes-made.md` (never overwrite)
+2. Format: `## YYYY-MM-DD — Short title` / `**What happened:** ...` / `**What to do differently:** ...`
+3. Newest entries at the top
+4. **If the lesson is durable** (will matter in future sessions), also add it as a rule in the relevant section of this CLAUDE.md file
 
 ## Session End
 
 When a meaningful session ends:
-1. Summarize what was done
-2. Update the `Focus updated:` date in README.md
+1. Summarize what was done — a tight bullet list with file links
+2. **Update the `Focus updated:` date in README.md** — this is mandatory, not optional
 3. Ask if any decisions should be logged in `decisions/`
 4. Ask if Claude made any mistakes worth adding to `mistakes-made.md`
+5. Propose a commit if vault files changed

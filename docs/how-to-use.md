@@ -19,7 +19,7 @@ Claude figures out where it goes, shows you what it would write, and saves it on
 ### 3. Check in weekly
 Once a week, Claude reads your entire vault and gives you a briefing: what's changed, what you've been thinking about, connections between ideas, and one thing to focus on this week.
 
-**You don't have to remember to do this.** Claude keeps track. If it's been a week since your last briefing, Claude will offer to run one at the start of your next session. You can also trigger it yourself anytime:
+**You don't have to remember to do this.** Claude keeps track. If it's been a week since your last briefing, Claude generates one automatically at the start of your next session. You can also trigger it yourself anytime:
 
 ```
 /brief
