@@ -38,11 +38,18 @@ Install [Obsidian Web Clipper](https://chromewebstore.google.com/detail/obsidian
 
 ### Step 3 — Import the three templates
 
-The three template files are in this folder: [`docs/web-clipper/`](.). For each one:
+> 💡 **Tip — find the JSON files first.** Before you start importing, open `docs/web-clipper/` in your file explorer so you can grab the JSON files quickly when the import dialog asks for them.
+>
+> - In **VS Code**: right-click the `docs/web-clipper` folder in the left sidebar → **Reveal in File Explorer** (Windows) or **Reveal in Finder** (Mac).
+> - **Or**: right-click the folder in VS Code → **Copy Path** → paste it into the import dialog's location bar when it opens.
+>
+> Keep that file explorer window open while you do the next steps.
+
+The three template files are in `docs/web-clipper/`. For each one:
 
 1. In Web Clipper Settings, click **Templates** in the left sidebar
 2. Click the **⋯** menu (or **Import** button) → **Import template**
-3. Select one of the three JSON files:
+3. Browse to your `docs/web-clipper/` folder (the one you opened above) and select one of the three JSON files:
    - `youtube-template.json`
    - `x-post-template.json`
    - `article-template.json`

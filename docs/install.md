@@ -13,76 +13,92 @@ This guide takes about 15 minutes. By the end, you'll have a working second brai
 
 **You do NOT need an API key.** This runs entirely on your existing Claude subscription.
 
-## Step 1 — Get the template
+## Step 1 — Get the template (and understand what it is)
 
-**Option A (easiest):** Go to the GitHub page, click **Code → Download ZIP**. Extract it somewhere on your computer. Rename the folder to something meaningful (like `my-brain` or `my-business-vault`).
+Two ways to do this. **Pick whichever feels easier — the result is the same.**
 
-**Option B (advanced — only if you already use git):**
+### Option A — Download ZIP (easiest, no git required)
+
+1. Go to the GitHub page: https://github.com/seanmccloskey10-cell/claude-second-brain
+2. Click the green **Code** button → **Download ZIP**
+3. Extract the ZIP somewhere on your computer (e.g., your Documents folder)
+4. Rename the extracted folder to something meaningful — your business name works well (`yan-tutoring`, `speechway-vault`, etc.)
+
+### Option B — Git clone (if you already use git)
+
 ```
 git clone https://github.com/seanmccloskey10-cell/claude-second-brain my-brain
 ```
 
-## Step 2 — Open it in VS Code
+Replace `my-brain` with whatever you want to call your vault.
 
-Open VS Code. Go to **File → Open Folder** and select the folder you just created.
+---
 
-## Step 3 — Start Claude Code
+> ⚠️ **Important — read this carefully.** The folder you just created **IS your vault.** Don't create a new empty folder alongside it. The cloned/extracted folder, with all its files inside, is what you'll use as your second brain. The placeholder content (in README.md, in `pillars/_TEMPLATE.md`) gets customized for you when you run `/setup` in Step 3. So if you see a `YYYY-MM-DD` placeholder or an empty section, that's normal — `/setup` fills it in.
 
-Open the command panel at the bottom of VS Code (View → Terminal, or press `` Ctrl+` ``). This is where you type commands to talk to Claude.
+## Step 2 — Open it in VS Code and start Claude Code
 
-First, connect VS Code to your Claude account — the same one you use on claude.ai:
+1. Open VS Code → **File → Open Folder** → select the folder from Step 1.
+2. Open the terminal: **View → Terminal**. The keyboard shortcut is `` Ctrl+` `` on Windows/Linux, `` Cmd+` `` on Mac.
+3. Connect to your Claude account (uses your existing plan, no API key):
+   ```
+   claude login
+   ```
+4. Start Claude Code:
+   ```
+   claude
+   ```
+
+Claude reads `CLAUDE.md` automatically. It now knows how to work with the vault.
+
+## Step 3 — Run `/setup`
+
+In the Claude chat, type:
 
 ```
-claude login
+/setup
 ```
 
-This links to your existing plan. No API key needed, no extra bill.
+Claude will walk you through a 5-10 minute wizard:
+- Asks your name and what your business does
+- Customizes your README with your actual focus
+- Creates your first pillar file from the template
+- Offers to set up the global instruction file (Step 4 below)
 
-Then start Claude:
-```
-claude
-```
+**The wizard handles all the customization for you.** You just answer questions. Claude shows you every change before it writes anything.
 
-Claude reads the `CLAUDE.md` file automatically. It now knows how to work with your vault.
+## Step 4 — Make the brain follow you everywhere
 
-## Step 4 — Tell Claude about your business
+This is offered automatically by `/setup`, but worth understanding.
 
-Just start talking:
+By default, Claude only knows about your vault when the vault folder is open in VS Code. With one small file in a special location, Claude reads your vault from **any** folder on your computer — so when you're working on something else, Claude still knows about your business.
 
-"I want to tell you about my business. Can you interview me and capture everything in my vault?"
+If you said "yes" during `/setup`, this is already done. If you said "later" — see [global-instruction-file.md](global-instruction-file.md) when you're ready (2 min setup).
 
-Claude will ask about you and your business. Talk to it — voice-transcribe if you can. It'll capture everything into your vault, showing you what it's going to write before making any changes. This is the most important step: getting your business context into the vault.
+**To test it:** open any other folder in VS Code. Start Claude Code. Ask: *"What do you know about my business?"* If Claude describes your business, it's working everywhere.
 
-## Step 5 — Open in Obsidian
+## Step 5 — Open in Obsidian and run your first briefing
 
-Open Obsidian. Choose **"Open folder as vault"** and select the same folder you opened in VS Code.
+1. Open Obsidian. Choose **"Open folder as vault"** and select the same folder you opened in VS Code.
 
-Now you have two windows into the same brain:
-- **VS Code** — where you work with Claude (capture, interview, brief)
-- **Obsidian** — where you browse your notes, follow links, see the big picture
+   Now you have two windows into the same brain:
+   - **VS Code** — where you work with Claude (capture, ingest, brief)
+   - **Obsidian** — where you browse your notes, follow links, see the big picture
 
-## Step 6 — Make the brain follow you everywhere (recommended)
+2. Back in VS Code, run your first briefing:
+   ```
+   /brief
+   ```
 
-Right now, your vault only works when the vault folder is open. There's a way to make Claude always read your vault, even when you're working on something else.
-
-See [global-instruction-file.md](global-instruction-file.md) for the 2-minute setup.
-
-## Step 7 — Try your first briefing
-
-Back in VS Code, in your vault folder:
-```
-/brief
-```
-
-If you've only just started, the briefing will be short — that's normal. It gets richer every week as you add more.
+   If you've only just started, the briefing will be short — that's normal. It gets richer every week as you add more.
 
 ## What to Do This Week
 
-1. **One thought per day** — just tell Claude what's on your mind (30 seconds, voice-transcribe)
-2. **Find one article** relevant to your business. Save it in `raw/`. Tell Claude to process it.
-3. **Wait for Claude to offer a briefing.** After a week, Claude will ask if you want one. Say yes. See what it learned.
+1. **One thought per day** — open Claude Code, just say what's on your mind. 30 seconds, voice-transcribe if you can.
+2. **Find one article** relevant to your business. Save it in `raw/` (or use the [Web Clipper](web-clipper/setup.md) for one-click capture). Tell Claude to process it.
+3. **Wait for `/brief` to fire.** Claude tracks when your last briefing was and runs one automatically when it's time. Or run `/brief` yourself anytime.
 
-You can also run `/brief` yourself anytime. That's the whole habit. A few minutes per day.
+That's the whole habit. A few minutes per day. The vault compounds.
 
 ---
 
@@ -91,11 +107,20 @@ You can also run `/brief` yourself anytime. That's the whole habit. A few minute
 **"claude: command not found"**
 Claude Code isn't installed yet. Follow the [install guide](https://docs.anthropic.com/en/docs/claude-code).
 
+**"git: command not recognized" / "I don't have git installed"**
+No problem — use Option A (Download ZIP) in Step 1. You don't need git at all to use this template. If you want git later for backups or version history, install [GitHub Desktop](https://desktop.github.com/) — it's the friendliest way in.
+
 **"I see files in VS Code but not in Obsidian"**
 Make sure you opened the same folder in both apps. In Obsidian: Open Vault → select the vault folder.
 
 **"Claude isn't reading my vault context"**
-Make sure you're in the vault folder when you start Claude Code. Check that `CLAUDE.md` exists in the root of your vault folder.
+Make sure you're in the vault folder when you start Claude Code. Check that `CLAUDE.md` exists in the root of your vault folder. If you want it to read from anywhere, set up the [global instruction file](global-instruction-file.md).
+
+**"I cloned the repo but I'm not sure if I'm in my vault"**
+Open the folder in VS Code. If you can see `CLAUDE.md`, `README.md`, and folders called `pillars/`, `raw/`, `wiki/` — you're in your vault. That folder, with everything in it, is your second brain.
+
+**"The README has placeholders like `YYYY-MM-DD` — is something broken?"**
+No, those are intentional. They get filled in by `/setup`. If you ran `/setup` and they're still there, run it again — it may have been interrupted.
 
 **"I want to back up my vault"**
 Your vault is just files on your computer. You can:

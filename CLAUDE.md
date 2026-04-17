@@ -14,14 +14,35 @@ Every session, before responding, read these two files:
 2. `README.md` — current priorities and what's active
 
 Then:
-3. **Staleness gate:** Check the `Focus updated:` date in README. If it's more than 7 days old, ask the owner to update their priorities before doing anything else. Stale context means wrong advice.
-4. **Briefing gate:** Check `wiki/briefings/` for the most recent briefing file. If 7+ days since the last briefing (or none exist), **generate a briefing automatically** using `.claude/commands/brief.md` before doing anything else.
-5. **Structural glance:** While reading, note anything unexpected — folders that shouldn't exist, non-.md files at root, anything that looks wrong. Flag it if found.
-6. Only read deeper files if the question requires them — follow `[[wikilinks]]` to navigate, don't load everything
+3. **First-time detection:** After reading README, check whether the vault has been customized for the owner yet. Signals that it has NOT been customized:
+   - README "Your Vault Right Now" section still contains `_(run /setup)_` or `YYYY-MM-DD` placeholders
+   - The only file in `pillars/` is `_TEMPLATE.md` (no actual pillar file exists)
+   - The owner's first message doesn't suggest they're already set up
+
+   If the vault is fresh, **stop and tell the owner**: "It looks like this vault hasn't been customized yet. Want to run `/setup`? It's a 5-10 minute wizard that'll interview you, fill in your README, and create your first pillar. Just type `/setup` and I'll walk you through it." Do this BEFORE answering whatever else they asked — their question may depend on the vault being set up.
+4. **Staleness gate:** Check the `Focus updated:` date in README. If it's more than 7 days old, ask the owner to update their priorities before doing anything else. Stale context means wrong advice. (Skip this step if the vault is fresh — Step 3 covers it.)
+5. **Briefing gate:** Check `wiki/briefings/` for the most recent briefing file. If 7+ days since the last briefing (or none exist), **generate a briefing automatically** using `.claude/commands/brief.md` before doing anything else. (Skip if vault is fresh.)
+6. **Structural glance:** While reading, note anything unexpected — folders that shouldn't exist, non-.md files at root, anything that looks wrong. Flag it if found.
+7. Only read deeper files if the question requires them — follow `[[wikilinks]]` to navigate, don't load everything
 
 Do not announce that you've read them. Just use the context naturally.
 
 **What NOT to read at session start:** `mistakes-made.md` is a write-only log, not a session-start read. Durable lessons from past mistakes are graduated into this CLAUDE.md file as rules. The raw log is read during briefings and on demand.
+
+## Commands Available
+
+Slash commands live in `.claude/commands/`. Here's when to use each:
+
+| Command | When to suggest it | What it does |
+|---|---|---|
+| `/setup` | First-time vault (placeholder values still in README, or `pillars/` only has `_TEMPLATE.md`) | Interviews the owner, customizes README, creates first pillar, offers global brain setup |
+| `/hello` | Owner is starting a new session | Reads README + this file + SESSION-NOTES.md, briefs the owner on where they are |
+| `/goodbye` | Owner is ending a session and meaningful work happened | Writes session notes, sets one-task homework, sets up the next /hello |
+| `/brief` | 7+ days since the last briefing in `wiki/briefings/` (this fires automatically per the briefing gate above) | Full vault review, surfaces connections, gives one thing to focus on |
+| `/ingest` | Owner shares an article, URL, or "process raw/" | Novelty-checks against existing wiki, saves to raw/, processes into wiki, scans for connections |
+| `/check` | Owner asks "is my setup right?" or you suspect something's misconfigured | Read-only sanity scan: README customized, pillar exists, global file exists, commands present, web-clipper templates present. Returns green/yellow/red report. |
+
+**For everything else, use natural language.** The owner does NOT need to know slash commands exist for routine work — they just talk. Slash commands are tools you reach for when the natural-language path is unclear.
 
 ## Folder Map
 

@@ -58,6 +58,13 @@ Don't announce that you've read them. Just use the context naturally.
 - Show me changes before making them
 - Be concise — bullets over paragraphs
 - Push back if I'm making a mistake
+
+## Wrong-Folder Detection
+If I type any of these commands and you are NOT currently in my vault folder — `/setup`, `/hello`, `/goodbye`, `/brief`, `/ingest`, `/check` — stop and tell me:
+
+> "You're not in your vault folder right now. Your vault is at `[YOUR VAULT PATH]`. Want me to help you switch to it? You can either close this Claude Code session and reopen it inside the vault folder, or run `cd [YOUR VAULT PATH]` in the terminal."
+
+Do not try to run the command from the wrong folder — it will half-work or fail confusingly. Surfacing the folder mismatch immediately saves the user from a debugging spiral.
 ```
 
 ## How to Test It

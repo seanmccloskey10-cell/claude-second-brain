@@ -2,6 +2,8 @@
 
 **Your AI forgets everything. This fixes that.**
 
+> **👋 First time?** The folder you just cloned **IS your vault** — don't create a new empty folder alongside it. Open Claude Code in this folder and type **`/setup`** to get started. The wizard takes 5-10 minutes.
+
 This is a system that gives Claude long-term memory about you and your business. Every time you start a new session — in any folder, on any project — Claude already knows who you are, what you're working on, and what matters to you.
 
 No repeating yourself. No re-explaining your business. No starting from scratch.
@@ -12,7 +14,16 @@ Your vault is a folder of plain text files on your computer. Claude reads them a
 
 **You just talk to Claude.** Tell it what you're thinking, share an article, ask a question. Claude knows where things go and how to organize them — the instruction file it reads automatically tells it what to do.
 
-The one command worth knowing: **`/brief`** — a weekly briefing where Claude reads your entire vault, tells you what's changed, surfaces connections, and gives you one thing to focus on. **You don't have to remember to run it.** Claude tracks when your last briefing was and generates one automatically when it's time.
+The four commands worth knowing:
+
+| Command | When | What it does |
+|---|---|---|
+| `/setup` | Once, at the start | First-run wizard — interviews you, customizes the vault, sets up the global brain |
+| `/hello` | Start of each session | Briefs you on where you are and what's active |
+| `/goodbye` | End of each session | Writes session notes so the next session picks up cleanly |
+| `/brief` | Weekly (auto) | Full vault review with connections, blind spots, and one thing to focus on |
+
+For everything else: **just talk to Claude.** Share a thought, paste an article, ask a question. Claude figures out where it goes.
 
 ## Three Habits
 
@@ -20,7 +31,7 @@ The one command worth knowing: **`/brief`** — a weekly briefing where Claude r
 |-------|------------|----------|
 | **Capture** | Tell Claude a thought, share an article, talk about your business | 30 seconds – 10 minutes |
 | **Review** | Claude runs `/brief` weekly — read the output | 5 minutes to read |
-| **Feed** | One-click capture with [Web Clipper](docs/web-clipper/setup.md), then `/ingest` in Claude | 30 seconds capture, 2 min process |
+| **Feed** | One-click capture with [Web Clipper](docs/web-clipper/setup.md), then Claude processes it | 30 seconds capture, 2 min process |
 
 Everything else is handled by Claude behind the scenes.
 
@@ -28,7 +39,7 @@ Everything else is handled by Claude behind the scenes.
 
 ```
 your-vault/
-├── pillars/          ← Your business (the core)
+├── pillars/          ← Your business (the core — created by /setup)
 ├── raw/              ← Articles, PDFs, posts you've saved (originals, never edited)
 ├── wiki/             ← Your personal Wikipedia (Claude builds this from your sources)
 │   ├── index.md      ← Table of contents (Claude maintains this automatically)
@@ -39,7 +50,7 @@ your-vault/
 ├── mistakes-made.md  ← Error log (write-only — durable lessons get promoted into CLAUDE.md)
 ├── CLAUDE.md         ← The instruction file Claude reads first
 ├── .claude/
-│   └── commands/     ← Slash commands: /brief (weekly review), /ingest (process raw)
+│   └── commands/     ← /setup, /hello, /goodbye, /brief, /ingest
 └── docs/             ← Setup guides
     └── web-clipper/  ← One-click capture: extension setup + 3 importable templates
 ```
@@ -50,38 +61,61 @@ your-vault/
 
 ## Getting Started
 
-### I already have a vault
+### New here? Start with this
 
-Give this prompt to Claude Code:
+1. **Clone this repo** to your computer:
+   ```
+   git clone https://github.com/seanmccloskey10-cell/claude-second-brain my-brain
+   ```
+   *(Replace `my-brain` with whatever you want to call your vault.)*
+2. **Open the cloned folder in VS Code** (File → Open Folder).
+3. **Open the terminal** (View → Terminal).
+4. **Connect to your Claude account:** `claude login`
+5. **Start Claude Code:** `claude`
+6. **Type `/setup`** and follow the wizard.
+
+That's it. The `/setup` wizard interviews you about your business, customizes your vault, creates your first pillar, and offers to set up the global instruction file (so the brain follows you into every project).
+
+For a more detailed step-by-step (with troubleshooting), see [docs/install.md](docs/install.md).
+
+### Already have a vault?
+
+Give this prompt to Claude Code in your existing vault:
 
 > Download https://github.com/seanmccloskey10-cell/claude-second-brain to a temporary folder — NOT inside my vault. Read the CLAUDE.md and docs/how-to-use.md from the downloaded template. Then look at my vault and help me add whatever I'm missing. Don't overwrite anything I already have. Show me every change before you make it.
 
-If you're comfortable with git, you can also clone it:
-```
-git clone https://github.com/seanmccloskey10-cell/claude-second-brain my-brain-template
-```
+## Now What? — Things You Can Say to Claude
 
-### Starting from scratch
+Once `/setup` is done, you don't need to memorize any commands. You just talk. If you're not sure what to say, here's a list of starter prompts grouped by what you're trying to do:
 
-See [docs/install.md](docs/install.md) for a step-by-step setup guide.
+**See [docs/things-you-can-ask.md](docs/things-you-can-ask.md).**
+
+Examples from that doc:
+- *"I had a thought about my pricing — can you save it?"*
+- *"I saved an article to raw/ — can you read it and pull out what's useful?"*
+- *"Based on everything in my vault, how should I approach raising my prices?"*
+- *"Read my whole vault. What patterns do you see across my notes?"*
+
+You don't need to use these exact words. Claude figures out what you mean.
 
 ## The Big Unlock: Your Brain Follows You Everywhere
 
 By default, your vault only works when the vault folder is open. But there's a way to make Claude read your vault in *every* project you open — even unrelated ones.
 
-See [docs/global-instruction-file.md](docs/global-instruction-file.md) to set this up. It takes 2 minutes and it's the single most powerful feature of this system.
+**`/setup` will offer to do this for you.** If you want to do it manually, see [docs/global-instruction-file.md](docs/global-instruction-file.md).
 
-**The test:** Open a completely empty folder. Start Claude Code. Ask: *"What do you know about my business?"* If Claude describes your business, the brain is working everywhere.
+**The test:** Open a completely different folder. Start Claude Code. Ask: *"What do you know about my business?"* If Claude describes your business, the brain is working everywhere.
 
 ## Your Vault Right Now
 
-**Focus updated:** YYYY-MM-DD
+> 🛠️ **This section gets filled in when you run `/setup`.** After setup, it'll show your current priorities and link to your business pillar. Until then, it's intentionally empty.
+
+**Focus updated:** _(run `/setup`)_
 
 **Current priorities:**
-- [ ] ...
-- [ ] ...
+- _(`/setup` will help you write 1-3 priorities here)_
 
-**Your pillar:** [[pillars/your-business]]
+**Your pillar:** _(`/setup` will create this and link it here)_
 
 ## Quick Rules
 
