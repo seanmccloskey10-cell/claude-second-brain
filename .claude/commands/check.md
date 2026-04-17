@@ -40,7 +40,7 @@ If the file exists but is named `global.md`, `Claude.md`, or anything other than
 
 ### 5. Slash commands present
 
-Check `.claude/commands/` for all five canonical commands:
+Check `.claude/commands/` for all six canonical commands:
 - `setup.md`
 - `hello.md`
 - `goodbye.md`

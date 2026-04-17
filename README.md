@@ -50,7 +50,7 @@ your-vault/
 ├── mistakes-made.md  ← Error log (write-only — durable lessons get promoted into CLAUDE.md)
 ├── CLAUDE.md         ← The instruction file Claude reads first
 ├── .claude/
-│   └── commands/     ← /setup, /hello, /goodbye, /brief, /ingest
+│   └── commands/     ← /setup, /hello, /goodbye, /brief, /ingest, /check
 └── docs/             ← Setup guides
     └── web-clipper/  ← One-click capture: extension setup + 3 importable templates
 ```

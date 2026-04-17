@@ -7,6 +7,8 @@ updated: 2026-04-14
 tags: [clients, retention, business]
 ---
 
+> 📘 **Example file.** This shows what a finished wiki page looks like. The `[[wikilinks]]` at the bottom point to files that don't exist yet — they're illustrative. Your real wiki pages will link to your real `raw/` and `pillars/` files. Feel free to delete this example once you've got the hang of it.
+
 ## What This Is
 
 Strategies and observations about keeping existing clients engaged and coming back. For a tutoring business, this means understanding why students stay, why they leave, and what makes the difference.
