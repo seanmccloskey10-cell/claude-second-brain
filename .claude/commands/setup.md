@@ -6,7 +6,7 @@ You are walking the owner through their first-run setup. They just cloned this r
 
 Read CLAUDE.md and README.md to confirm you're in a fresh second-brain vault. If either file is missing, stop and tell the owner:
 
-> "It looks like this folder isn't a vault. Make sure you've opened the cloned 'claude-second-brain' folder (the one with CLAUDE.md and README.md inside it), then try /setup again."
+> "It looks like this folder isn't a vault. Make sure you've opened the cloned 'claude-second-brain-template' folder (the one with CLAUDE.md and README.md inside it), then try /setup again."
 
 If both files are there, proceed.
 

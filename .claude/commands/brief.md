@@ -58,6 +58,18 @@ generated_by: /brief
 
 ## One Thing to Do This Week
 (A single, concrete suggestion. Not a to-do list. One thing.)
+
+## Voice memo script
+
+(A tighter, listen-on-a-walk version of the briefing — written for the narrator to read aloud. Different register from the sections above:
+- First-person, conversational, like a letter from a thoughtful assistant
+- 5–7 minutes when read aloud (~1000 words, hard cap 5500 chars)
+- Plain English — no markdown formatting, no bullet lists, no headers inside this section
+- Cover the same ground as Connections + Push-back + One Thing — just spoken, not structured
+- Skip the vault-health audit and the unprocessed-items list — those are for the eye, not the ear
+- End with the "one thing to do this week", named directly)
+
+This section is what the optional voice-memo skill turns into MP3 audio. It's also useful on its own as the "executive summary" of the briefing for anyone who wants the gist without reading the structured sections.
 ```
 
 ## Rules
@@ -65,7 +77,7 @@ generated_by: /brief
 - **Never overwrite a previous briefing.** Each one is a new file with today's date.
 - **Cite every claim** with links: `[[wiki/page-name]]`
 - **Use the owner's actual words** from Owner's Take sections when possible.
-- **Keep it to a 5-minute read.** Be concise.
+- **Keep the structured sections to a 5-minute read.** Be concise.
 - **Never invent data.** If the vault doesn't say it, you don't know it.
 - **Be a friend who pushes back**, not a yes-man. If something doesn't add up, say so.
 
@@ -76,11 +88,31 @@ If the vault has fewer than 5 wiki pages, write a short briefing that:
 2. Suggests what to capture next (based on gaps you see)
 3. Encourages them: "Tell me a few thoughts about your business this week, and next week's briefing will have much more to work with."
 
+In this case, the Voice memo script section can be even shorter (2–3 minutes) — there's not enough material yet.
+
+## After writing the briefing — optional voice memo
+
+After the markdown briefing is written, check whether the owner has set up the optional voice-memo skill:
+
+1. Look for `.env` at the vault root.
+2. If `.env` exists AND contains a non-empty, non-placeholder `Eleven_Labs=` line, run:
+   ```bash
+   python .claude/skills/generate-voice-memo/generate.py wiki/briefings/YYYY-MM-DD.md
+   ```
+   Then tell the owner where the MP3 was saved.
+
+3. If `.env` is missing OR `Eleven_Labs=` is empty / still the placeholder:
+   - **First time only:** mention the option once. Something like:
+     > *"By the way — there's an optional voice-memo skill that turns the briefing into an MP3 you can listen to on a walk. It needs a free ElevenLabs key. Want me to walk you through setting it up? Otherwise I'll stop mentioning it."*
+   - If the owner has already declined OR has been told once before in a previous briefing, **don't mention it again**. Just skip silently.
+
+The voice memo is **opt-in**. The vault works completely without it.
+
 ## After writing
 
-Append to `log.md`: `## [YYYY-MM-DD] lint | Weekly briefing`
+Append to `log.md`: `## [YYYY-MM-DD] brief | Weekly briefing`
 
 Tell the owner:
-- Where you saved the briefing
+- Where you saved the briefing (and the MP3, if one was generated)
 - The top 2-3 things you think they should pay attention to
 - Ask: "Anything in here that surprised you?"

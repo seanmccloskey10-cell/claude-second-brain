@@ -39,25 +39,34 @@ Everything else is handled by Claude behind the scenes.
 
 ```
 your-vault/
-├── pillars/          ← Your business (the core — created by /setup)
-├── raw/              ← Articles, PDFs, posts you've saved (originals, never edited)
-├── wiki/             ← Your personal Wikipedia (Claude builds this from your sources)
-│   ├── index.md      ← Table of contents (Claude maintains this automatically)
-│   └── briefings/    ← Weekly briefings saved here
-├── inbox/            ← Quick thoughts, not yet sorted
-├── decisions/        ← Business decisions with context
-├── log.md            ← Activity log — what was ingested, when briefings ran
-├── mistakes-made.md  ← Error log (write-only — durable lessons get promoted into CLAUDE.md)
-├── CLAUDE.md         ← The instruction file Claude reads first
+├── README.md          ← This file (vault home page, customized by /setup)
+├── CLAUDE.md          ← The instruction file Claude reads first
+├── HANDOFF-PROMPT.md  ← Paste into Claude Code if you want the agent to set this up for you
+├── HELP.md            ← Diagnose-and-fix prompt for when something breaks
+├── .env.example       ← Optional API keys (ElevenLabs for voice briefings); copy to .env to enable
+├── pillars/           ← Your business (the core — created by /setup)
+├── raw/               ← Articles, PDFs, posts you've saved (originals, never edited)
+├── wiki/              ← Your personal Wikipedia (Claude builds this from your sources)
+│   ├── index.md       ← Table of contents (Claude maintains this automatically)
+│   └── briefings/     ← Weekly briefings saved here
+│       └── audio/     ← Optional MP3 voice briefings (if ElevenLabs key set)
+├── inbox/             ← Quick thoughts, not yet sorted
+├── decisions/         ← Business decisions with context
+├── log.md             ← Activity log — what was ingested, when briefings ran
+├── mistakes-made.md   ← Error log (write-only — durable lessons get promoted into CLAUDE.md)
 ├── .claude/
-│   └── commands/     ← /setup, /hello, /goodbye, /brief, /ingest, /check
-└── docs/             ← Setup guides
-    └── web-clipper/  ← One-click capture: extension setup + 3 importable templates
+│   ├── commands/      ← /setup, /hello, /goodbye, /brief, /ingest, /check
+│   └── skills/        ← Optional skills (generate-voice-memo for the voice briefings)
+└── docs/              ← Setup guides + concept docs
+    ├── concepts/      ← Short explainers: three-layers-of-memory, the-four-commands, etc.
+    └── web-clipper/   ← One-click capture: extension setup + 3 importable templates
 ```
 
 ## What This Costs
 
-**Nothing extra.** This runs on your existing Claude plan. No API key, no second bill.
+**Nothing extra for the core experience.** This runs on your existing Claude plan. No API key, no second bill.
+
+**One optional add-on:** if you want your weekly briefing read aloud as an MP3 (so you can listen on a walk), you can plug in a free [ElevenLabs](https://elevenlabs.io) key in `.env`. Free tier covers ~3 audio briefings per month. Skip it if you'd rather just read the briefing — everything else works the same. See [docs/concepts/voice-briefings.md](docs/concepts/voice-briefings.md).
 
 ## Getting Started
 
@@ -65,7 +74,7 @@ your-vault/
 
 1. **Clone this repo** to your computer:
    ```
-   git clone https://github.com/seanmccloskey10-cell/claude-second-brain my-brain
+   git clone https://github.com/seanmccloskey10-cell/claude-second-brain-template my-brain
    ```
    *(Replace `my-brain` with whatever you want to call your vault.)*
 2. **Open the cloned folder in VS Code** (File → Open Folder).
@@ -76,13 +85,19 @@ your-vault/
 
 That's it. The `/setup` wizard interviews you about your business, customizes your vault, creates your first pillar, and offers to set up the global instruction file (so the brain follows you into every project).
 
-For a more detailed step-by-step (with troubleshooting), see [docs/install.md](docs/install.md).
+For a more detailed step-by-step (with troubleshooting), see [docs/install.md](docs/install.md). Want to hand the whole setup off to your AI agent instead of doing it yourself? See [HANDOFF-PROMPT.md](HANDOFF-PROMPT.md) — paste it into Claude Code and the agent handles everything.
+
+**New here? Read these short concept docs first** (each ~5 min):
+- [docs/concepts/three-layers-of-memory.md](docs/concepts/three-layers-of-memory.md) — the boat / island / continent model
+- [docs/concepts/the-four-commands.md](docs/concepts/the-four-commands.md) — what `/setup`, `/hello`, `/goodbye`, `/brief` actually do
+- [docs/concepts/folder-grammar.md](docs/concepts/folder-grammar.md) — pillars, raw, wiki, inbox: which goes where
+- [docs/concepts/capacity-and-compaction.md](docs/concepts/capacity-and-compaction.md) — why Claude needs `/hello` and `/goodbye` (the context-window problem)
 
 ### Already have a vault?
 
 Give this prompt to Claude Code in your existing vault:
 
-> Download https://github.com/seanmccloskey10-cell/claude-second-brain to a temporary folder — NOT inside my vault. Read the CLAUDE.md and docs/how-to-use.md from the downloaded template. Then look at my vault and help me add whatever I'm missing. Don't overwrite anything I already have. Show me every change before you make it.
+> Download https://github.com/seanmccloskey10-cell/claude-second-brain-template to a temporary folder — NOT inside my vault. Read the CLAUDE.md and docs/how-to-use.md from the downloaded template. Then look at my vault and help me add whatever I'm missing. Don't overwrite anything I already have. Show me every change before you make it.
 
 ## Now What? — Things You Can Say to Claude
 
@@ -131,6 +146,10 @@ By default, your vault only works when the vault folder is open. But there's a w
 - Not a chat history archive — distill, don't dump
 - Not a place for code — link to code, don't paste it
 - Not finished — it grows with you
+
+## Something Not Working?
+
+See [HELP.md](HELP.md) — paste the diagnostic prompt into Claude Code and it'll walk through what's broken.
 
 ---
 

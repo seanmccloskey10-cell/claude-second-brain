@@ -19,7 +19,7 @@ Two ways to do this. **Pick whichever feels easier — the result is the same.**
 
 ### Option A — Download ZIP (easiest, no git required)
 
-1. Go to the GitHub page: https://github.com/seanmccloskey10-cell/claude-second-brain
+1. Go to the GitHub page: https://github.com/seanmccloskey10-cell/claude-second-brain-template
 2. Click the green **Code** button → **Download ZIP**
 3. Extract the ZIP somewhere on your computer (e.g., your Documents folder)
 4. Rename the extracted folder to something meaningful — your business name works well (`yan-tutoring`, `speechway-vault`, etc.)
@@ -27,7 +27,7 @@ Two ways to do this. **Pick whichever feels easier — the result is the same.**
 ### Option B — Git clone (if you already use git)
 
 ```
-git clone https://github.com/seanmccloskey10-cell/claude-second-brain my-brain
+git clone https://github.com/seanmccloskey10-cell/claude-second-brain-template my-brain
 ```
 
 Replace `my-brain` with whatever you want to call your vault.
